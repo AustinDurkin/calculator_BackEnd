@@ -1,0 +1,180 @@
+
+"openapi": "3.0.3"
+"info":
+  "title": "Calculator API"
+  "description": "A simple API for basic calculator operations."
+  "version": "1.0.0"
+"servers":
+  -
+    "url": "http://localhost:8080"
+    "description": "Local server"
+"paths":
+  "/calculator/add":
+    "post":
+      "summary": "Add two numbers"
+      "description": "Returns their sum."
+      "requestBody":
+        "description": "Request body for an operation involving two numbers."
+        "required": true
+        "content":
+          "application/json":
+            "schema":
+              "type": "object"
+              "properties":
+                "number1":
+                  "type": "number"
+                  "example": 5
+                "number2":
+                  "type": "number"
+                  "example": 10
+      "responses":
+        "200":
+          "description": "Successful operation"
+          "content":
+            "application/json":
+              "schema":
+                "type": "object"
+                "properties":
+                  "result":
+                    "type": "number"
+                    "example": 15
+  "/calculator/subtract":
+    "post":
+      "summary": "Subtract two numbers"
+      "description": "Returns their difference."
+      "requestBody":
+        "description": "Request body for an operation involving two numbers."
+        "required": true
+        "content":
+          "application/json":
+            "schema":
+              "type": "object"
+              "properties":
+                "number1":
+                  "type": "number"
+                  "example": 5
+                "number2":
+                  "type": "number"
+                  "example": 10
+      "responses":
+        "200":
+          "description": "Successful operation"
+          "content":
+            "application/json":
+              "schema":
+                "type": "object"
+                "properties":
+                  "result":
+                    "type": "number"
+                    "example": 15
+  "/calculator/multiply":
+    "post":
+      "summary": "Multiply two numbers"
+      "description": "Returns their product."
+      "requestBody":
+        "description": "Request body for an operation involving two numbers."
+        "required": true
+        "content":
+          "application/json":
+            "schema":
+              "type": "object"
+              "properties":
+                "number1":
+                  "type": "number"
+                  "example": 5
+                "number2":
+                  "type": "number"
+                  "example": 10
+      "responses":
+        "200":
+          "description": "Successful operation"
+          "content":
+            "application/json":
+              "schema":
+                "type": "object"
+                "properties":
+                  "result":
+                    "type": "number"
+                    "example": 15
+  "/calculator/divide":
+    "post":
+      "summary": "Divide two numbers"
+      "description": "Returns their quotient."
+      "requestBody":
+        "description": "Request body for an operation involving two numbers."
+        "required": true
+        "content":
+          "application/json":
+            "schema":
+              "type": "object"
+              "properties":
+                "number1":
+                  "type": "number"
+                  "example": 5
+                "number2":
+                  "type": "number"
+                  "example": 10
+      "responses":
+        "200":
+          "description": "Successful operation"
+          "content":
+            "application/json":
+              "schema":
+                "type": "object"
+                "properties":
+                  "result":
+                    "type": "number"
+                    "example": 15
+        "400":
+          "description": "Division by zero"
+          "content":
+            "application/json":
+              "schema":
+                "type": "object"
+                "properties":
+                  "error":
+                    "type": "string"
+                    "example": "Division by zero is not allowed."
+"components":
+  "requestBodies":
+    "NumberOperationRequest":
+      "description": "Request body for an operation involving two numbers."
+      "required": true
+      "content":
+        "application/json":
+          "schema":
+            "type": "object"
+            "properties":
+              "number1":
+                "type": "number"
+                "example": 5
+              "number2":
+                "type": "number"
+                "example": 10
+  "responses":
+    "OperationSuccess":
+      "description": "Successful operation"
+      "content":
+        "application/json":
+          "schema":
+            "type": "object"
+            "properties":
+              "result":
+                "type": "number"
+                "example": 15
+  "schemas":
+    "NumberOperation":
+      "type": "object"
+      "properties":
+        "number1":
+          "type": "number"
+          "example": 5
+        "number2":
+          "type": "number"
+          "example": 10
+    "OperationResult":
+      "type": "object"
+      "properties":
+        "result":
+          "type": "number"
+          "example": 15
