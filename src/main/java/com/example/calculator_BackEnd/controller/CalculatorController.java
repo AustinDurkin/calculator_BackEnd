@@ -6,13 +6,13 @@ import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
 
-@RestController // Indicates that this class is a Spring MVC controller where every method returns a domain object instead of a view.
-@RequestMapping("/calculator") // Maps HTTP requests to handler methods of MVC and REST controllers.
-
+@RestController
+@RequestMapping("/calculator")
+@CrossOrigin(origins = "http://localhost:4200") // Allow cross-origin requests from http://localhost:4200
 public class CalculatorController {
 
-    @PostMapping("/add") // Maps HTTP POST requests onto specific handler methods.
-    public OperationResult add(@RequestBody NumberOperation operation) { // Binds the HTTP request body to a transfer or domain object.
+    @PostMapping("/add")
+    public OperationResult add(@RequestBody NumberOperation operation) {
         BigDecimal result = operation.getNumber1().add(operation.getNumber2());
         return new OperationResult().result(result);
     }
