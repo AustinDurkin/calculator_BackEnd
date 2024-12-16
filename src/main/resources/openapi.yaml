@@ -1,0 +1,100 @@
+openapi: 3.0.0
+info:
+  title: Calculator API
+  description: A simple API for basic arithmetic operations
+  version: 1.0.0
+paths:
+  /add:
+    get:
+      summary: Add two numbers
+      parameters:
+        - in: query
+          name: a
+          schema:
+            type: number
+          required: true
+          description: The first number
+        - in: query
+          name: b
+          schema:
+            type: number
+          required: true
+          description: The second number
+      responses:
+        '200':
+          description: The result of the addition
+          content:
+            application/json:
+              schema:
+                type: number
+  /subtract:
+    get:
+      summary: Subtract two numbers
+      parameters:
+        - in: query
+          name: a
+          schema:
+            type: number
+          required: true
+          description: The first number
+        - in: query
+          name: b
+          schema:
+            type: number
+          required: true
+          description: The second number
+      responses:
+        '200':
+          description: The result of the subtraction
+          content:
+            application/json:
+              schema:
+                type: number
+  /multiply:
+    get:
+      summary: Multiply two numbers
+      parameters:
+        - in: query
+          name: a
+          schema:
+            type: number
+          required: true
+          description: The first number
+        - in: query
+          name: b
+          schema:
+            type: number
+          required: true
+          description: The second number
+      responses:
+        '200':
+          description: The result of the multiplication
+          content:
+            application/json:
+              schema:
+                type: number
+  /divide:
+    get:
+      summary: Divide two numbers
+      parameters:
+        - in: query
+          name: a
+          schema:
+            type: number
+          required: true
+          description: The first number
+        - in: query
+          name: b
+          schema:
+            type: number
+          required: true
+          description: The second number
+      responses:
+        '200':
+          description: The result of the division
+          content:
+            application/json:
+              schema:
+                type: number
+        '400':
+          description: Invalid input, division by zero
